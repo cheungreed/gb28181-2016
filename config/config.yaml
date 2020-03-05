@@ -1,0 +1,29 @@
+##############HoloSens gb28181 yaml configure file##############
+###################################################
+---
+local_sip:
+  svr_id: 37010200002000000001
+  svr_domain: 3701030000
+  svr_ip: 192.168.81.141
+  svr_port: 5566
+
+remote_sip:
+  svr_id: 34020000002000000001
+  svr_domain: 3402000000
+  svr_ip: 192.168.81.141
+  svr_port: 5060
+  passwd: 123456
+
+log:
+  enable: off
+  level: 1
+  path: /log/HoloSens/gb28181/
+  logName: HoloSens_gb28181.log
+
+#媒体接收者IP
+media_raddr:
+  ip: 172.18.3.203
+
+media_port_pool:
+  start: 50000
+  end: 54000

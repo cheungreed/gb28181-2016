@@ -1,0 +1,49 @@
+//修改: 修改REGISTER请求时Contact字段的IP和Port值，以便解决设备和服务之间存在一层路由的情况
+// udp.c
+#ifndef GET_RECEIVED_RPORT
+static int _eXosip_register_replace_contact(const osip_message_t* sip, char* buf, char* host, int port)
+{
+    if (buf == NULL || host == NULL || sip == NULL)
+        return OSIP_UNDEFINED_ERROR;
+
+    if (sip->sip_method != NULL && 0 == strncmp(sip->sip_method, "REGISTER", 8)) {
+        osip_contact_t* contact = NULL;
+        osip_message_get_contact(sip, 0, & contact);
+
+        if (contact != NULL) {
+            if (contact->url->host == NULL || contact->url->port == NULL)
+                return 0;
+            osip_strncpy(contact->url->host, host, strlen(host));
+
+            char strport[16] = {0};
+            snprintf(strport, sizeof(strport), "%d", port);
+            osip_strncpy(contact->url->port, strport, strlen(strport));
+        }
+
+    }
+    return 0;
+}
+#endif
+
+
+int _eXosip_handle_incoming_message() {
+ i = osip_message_parse (se->sip, buf, length);
+  if (i != 0) {
+    OSIP_TRACE (osip_trace (__FILE__, __LINE__, OSIP_ERROR, NULL, "could not parse message\n"));
+    osip_message_free (se->sip);
+    osip_free (se);
+    return i;
+  }
+
+	//添加位置
+    _eXosip_register_replace_contact(se->sip, buf, host, port);
+
+  if (se->sip->call_id != NULL && se->sip->call_id->number != NULL) {
+    OSIP_TRACE (osip_trace (__FILE__, __LINE__, OSIP_INFO3, NULL, "MESSAGE REC. CALLID:%s\n", se->sip->call_id->number));
+  }
+
+  if (excontext->cbsipCallback != NULL) {
+    excontext->cbsipCallback (se->sip, 1);
+  }
+ }
+ 

@@ -1,0 +1,19 @@
+libjson:
+    GitHub: https://github.com/open-source-parsers/jsoncpp.git
+    Branch: master
+    Commit: fd940255ced7773489f818e62d7074fbcfda81cc
+
+libYAML:
+    GitHub: https://github.com/jbeder/yaml-cpp.git
+    Branch: master
+    Commit: b650bc8287ac92a5d93f94f20911fc1d7b4df94a
+
+libStreamResolver:
+    GitHub: https://github.com/Zi-lu/StreamResolver.git
+    Branch: master
+    Commit: f83a6559cfe40168954a0932e88c098afbfb92f1
+
+
+
+
+
