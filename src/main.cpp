@@ -54,7 +54,7 @@ int main(int argc, char* argv[])
 
 
     while (1) {
-        Infra::CThread::sleep(2*1000);
+        sleep(2*1000);
     }
 
     return 0;

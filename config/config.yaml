@@ -1,4 +1,4 @@
-##############HoloSens gb28181 yaml configure file##############
+##############gb28181 yaml configure file##############
 ###################################################
 ---
 local_sip:
@@ -17,8 +17,8 @@ remote_sip:
 log:
   enable: off
   level: 1
-  path: /log/HoloSens/gb28181/
-  logName: HoloSens_gb28181.log
+  path: /log/gb28181/
+  logName: gb28181.log
 
 #媒体接收者IP
 media_raddr:

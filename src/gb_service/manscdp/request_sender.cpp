@@ -8,7 +8,6 @@
 **	********************************************************************************
 */
 #include <string>
-#include <Infra/PrintLog.h>
 #include <gb_service/request_manager/base_request.h>
 #include <gb_service/request_manager/request_manager.h>
 #include "request_sender.h"

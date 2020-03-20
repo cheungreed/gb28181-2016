@@ -6,7 +6,6 @@
 **	Modify		: 2020/2/27		zhangqiang		Create the file
 **	********************************************************************************
 */
-#include <Infra/PrintLog.h>
 #include <gb_service/gb28181_svr_manager.h>
 #include "handler_manager.h"
 

@@ -6,7 +6,6 @@
 **	Modify		: 2020/2/28		zhangqiang		Create the file
 **	********************************************************************************
 */
-#include <Infra/PrintLog.h>
 #include <utils/common.h>
 #include "xml_parser.h"
 #include "defs/defs.h"

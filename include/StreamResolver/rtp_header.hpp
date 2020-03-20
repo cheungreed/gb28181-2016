@@ -1,10 +1,5 @@
 /*
 **	********************************************************************************
-**                           
-**                              Rong Shi Cloud
-**
-**   (c) Copyright 2011-2019, Ji'nan Jovision Digital Technology Co.Ltd
-**                            All Rights Reserved
 **
 **	File		: RtpHeader.hpp
 **	Description	: 

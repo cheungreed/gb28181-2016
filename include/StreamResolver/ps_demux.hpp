@@ -1,11 +1,6 @@
 /*
 **	********************************************************************************
 **
-**                              Rong Shi Cloud
-**
-**   (c) Copyright 2011-2019, Ji'nan Jovision Digital Technology Co.Ltd
-**                            All Rights Reserved
-**
 **	File		: ps2es.h
 **	Description	:
 **	Modify		: 2019/10/16		zhangqiang		Create the file

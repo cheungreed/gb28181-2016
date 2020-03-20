@@ -9,7 +9,7 @@
 #pragma once
 
 #include <queue>
-#include "Infra/Mutex.h"
+#include <mutex>
 
 namespace Zilu {
 namespace Protocol {
@@ -24,13 +24,13 @@ public:
 
     void Push(const T& in)
     {
-        Infra::CGuard g(m_mutex);
+        lock_guard<mutex> g(m_mutex);
         m_queue.push(in);
     }
 
     bool Pop(T& out)
     {
-        Infra::CGuard g(m_mutex);
+        lock_guard<mutex> g(m_mutex);
         if (m_queue.empty())
         {
             return false;
@@ -42,7 +42,7 @@ public:
 
 private:
     std::queue<T> m_queue;
-    Infra::CMutex m_mutex;
+    mutex        m_mutex;
 };
 
 }

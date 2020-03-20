@@ -7,7 +7,6 @@
 **	********************************************************************************
 */
 #include <eXosip2/eX_setup.h>
-#include <Infra/PrintLog.h>
 #include "base_handler.h"
 
 namespace Zilu {

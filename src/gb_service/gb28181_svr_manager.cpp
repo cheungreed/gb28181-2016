@@ -6,7 +6,6 @@
 **	Modify		: 2020/2/28		zhangqiang		Create the file
 **	********************************************************************************
 */
-#include <Infra/PrintLog.h>
 #include <gb_service/request_manager/request_manager.h>
 #include <media_transpond/session_manager.h>
 #include "gb28181_svr_manager.h"

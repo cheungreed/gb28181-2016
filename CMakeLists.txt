@@ -9,27 +9,7 @@ include_directories(src)
 #设置编译参数
 set(CMAKE_CXX_FLAGS "-ffunction-sections -fdata-sections -Wall -std=c++11 -DPOSIX -DDEBUG_")
 
-#导入库
-add_library(Infra STATIC IMPORTED)
-set_target_properties(Infra PROPERTIES IMPORTED_LOCATION ${PROJECT_SOURCE_DIR}/lib/m64x86/libInfra.a)
-
-add_library(json STATIC IMPORTED)
-set_target_properties(json PROPERTIES IMPORTED_LOCATION ${PROJECT_SOURCE_DIR}/lib/m64x86/libjson.a)
-
-add_library(eXosip2 STATIC IMPORTED)
-set_target_properties(eXosip2 PROPERTIES IMPORTED_LOCATION ${PROJECT_SOURCE_DIR}/lib/m64x86/libeXosip2.a)
-
-add_library(osip2 STATIC IMPORTED)
-set_target_properties(osip2 PROPERTIES IMPORTED_LOCATION ${PROJECT_SOURCE_DIR}/lib/m64x86/libosip2.a)
-
-add_library(osipparser2 STATIC IMPORTED)
-set_target_properties(osipparser2 PROPERTIES IMPORTED_LOCATION ${PROJECT_SOURCE_DIR}/lib/m64x86/libosipparser2.a)
-
-add_library(yaml STATIC IMPORTED)
-set_target_properties(yaml PROPERTIES IMPORTED_LOCATION ${PROJECT_SOURCE_DIR}/lib/m64x86/libyaml.a)
-
-add_library(StreamResolver STATIC IMPORTED)
-set_target_properties(StreamResolver PROPERTIES IMPORTED_LOCATION ${PROJECT_SOURCE_DIR}/lib/m64x86/libStreamResolver.a)
+link_directories(${PROJECT_SOURCE_DIR}/lib/m64x86/)
 
 # 设置可执行文件的输出路径(EXCUTABLE_OUTPUT_PATH是全局变量)
 set(EXECUTABLE_OUTPUT_PATH ./)
@@ -62,5 +42,4 @@ add_executable(zilu_gb28181
 
 #设置链接库
 link_directories(${PROJECT_SOURCE_DIR}/lib/m64x86/)
-target_link_libraries(zilu_gb28181 Infra pthread json eXosip2 osip2 osipparser2 uuid ssl crypto resolv yaml StreamResolver)
-#target_link_libraries(drs_gb28181 Infra pthread json eXosip2 uuid ssl crypto resolv yaml jvmpsvrmediadevice)
+target_link_libraries(zilu_gb28181 pthread json eXosip2 osip2 osipparser2 uuid ssl crypto resolv yaml StreamResolver)
